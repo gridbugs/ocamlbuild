@@ -22,6 +22,7 @@ build: [
     "OCAML_NATIVE=%{ocaml:native}%"
     "OCAML_NATIVE_TOOLS=%{ocaml:native}%"
   ]
+  ["sh" "-c" "sed s#/_build/.sandbox/[^/]*/_private/#/_build/_private/# src/ocamlbuild_config.ml > src/ocamlbuild_config.ml.new && mv src/ocamlbuild_config.ml.new src/ocamlbuild_config.ml"]
   [make "check-if-preinstalled" "all" "opam-install"]
 ]
 
